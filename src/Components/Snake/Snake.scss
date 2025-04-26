@@ -1,0 +1,26 @@
+/* Snake Segment */
+.snake-segment {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/*Snake Head Eyes Container*/
+.eyes-container {
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/*Snake Eyes*/
+.snake-eyes {
+  width: 4px;
+  height: 4px;
+  background-color: black;
+  border-radius: 50%;
+}

@@ -1,0 +1,149 @@
+//Color Themes
+$retro-background: #333333;
+$retro-text: #00ff00;
+$retro-snake: #00ff00;
+$retro-food: #ffcc00;
+$retro-board: #000000;
+
+$ocean-background: #1b2a34;
+$ocean-board: #16213e;
+$ocean-snake: #2b81eb;
+$ocean-food: #e94560;
+$ocean-text: #ffffff;
+
+$vampiric-background: #3b0a45; // Dark purple background
+$vampiric-text: #d1cfcf; // Pure white text
+$vampiric-snake: #d1456b; // Soft pink snake
+$vampiric-food: #b03a3a; // Vampiric red food
+$vampiric-board: #5f2c4d; // Deep burgundy board
+
+$midnight-background: #0f0f0f; // Pitch black background
+$midnight-text: #21b6ae; // Teal text
+$midnight-snake: #d62727; // Bright crimson snake
+$midnight-food: #f9c74f; // Bright gold food
+$midnight-board: #343a40; // Dark gray board
+
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./PressStart2P-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Mixin for theme styles
+@mixin theme($background, $text, $snake, $food, $board) {
+  background-color: $background;
+  color: $text;
+
+  .game-board {
+    background-color: $board;
+  }
+
+  .rules-container {
+    background-color: $board;
+    border: 5px solid #999;
+  }
+
+  .snake-segment {
+    background-color: $snake;
+  }
+
+  .food {
+    background-color: $food;
+  }
+}
+
+/* Basic Reset */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Press Start 2P";
+  line-height: 1.6;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: $retro-text; /* Default text color */
+
+  &.retro {
+    @include theme(
+      $retro-background,
+      $retro-text,
+      $retro-snake,
+      $retro-food,
+      $retro-board
+    );
+  }
+
+  &.vampiric {
+    @include theme(
+      $vampiric-background,
+      $vampiric-text,
+      $vampiric-snake,
+      $vampiric-food,
+      $vampiric-board
+    );
+  }
+
+  &.midnight {
+    @include theme(
+      $midnight-background,
+      $midnight-text,
+      $midnight-snake,
+      $midnight-food,
+      $midnight-board
+    );
+  }
+
+  &.ocean {
+    @include theme(
+      $ocean-background,
+      $ocean-text,
+      $ocean-snake,
+      $ocean-food,
+      $ocean-board
+    );
+  }
+}
+
+/* Header */
+.app-header {
+  background-color: #282c34;
+  color: var(--text-color);
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Content */
+.app-main {
+  display: flex;
+  flex-grow: 1;
+  padding: 8px;
+}
+
+/* Footer */
+.app-footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}

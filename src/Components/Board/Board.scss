@@ -1,0 +1,17 @@
+/* Game Board */
+.game-board {
+  position: relative;
+  border: 5px solid #999;
+}
+
+.game-status {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
